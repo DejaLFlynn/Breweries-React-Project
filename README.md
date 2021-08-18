@@ -1,5 +1,6 @@
 # Breweries-React-Project
 Displays NYC Breweries
+
 A component that displays a list of breweries in NYC.
 ❏ The list should display the following information for each brewery
 ❏ Name
