@@ -1,7 +1,7 @@
 # Breweries-React-Project
-Displays NYC Breweries
+Displays Philadelphia Breweries
 
-A component that displays a list of breweries in NYC.
+A component that displays a list of breweries in Philly.
 ❏ The list should display the following information for each brewery
 ❏ Name
 ❏ Type
@@ -14,3 +14,6 @@ A component that displays a list of breweries in NYC.
 
 # Trello Board link
 https://trello.com/invite/b/wW6Po8IP/3df5b020df2932fdd89f096e096fd9f4/breweries-of-nyc
+
+# Wireframe 
+https://wireframe.cc/pro/edit/465303
