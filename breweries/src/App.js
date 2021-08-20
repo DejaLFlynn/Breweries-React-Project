@@ -1,11 +1,11 @@
-
-import './App.css';
+import react from "react";
+import BreweriesForm from "./BreweriesForm";
 
 function App() {
   return (
     <div className="App">
-      Breweries
-
+      Philadelphia Breweries
+      <BreweriesForm />
     </div>
   );
 }
