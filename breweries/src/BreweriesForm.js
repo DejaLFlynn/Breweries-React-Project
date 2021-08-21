@@ -2,14 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import "./Breweries.css";
+import GoogleMaps from './GoogleMaps'
 
 const BreweriesForm = () => {
   const [listBrew, setListBrew] = useState([]);
-  const [name, setName] = useState("");
-  const [type, setType] = useState("");
-  const [webUrl, setWebUrl] = useState("");
-  const [city, setCity] = useState("");
-  const [postal, setPostal] = useState("");
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
   const [modal, setModal] = useState(false);
@@ -57,6 +53,7 @@ const BreweriesForm = () => {
                     {el.latitude}
                     {el.longitude}
                 </div>
+                <GoogleMaps/>
 
                 <div>
                   <button className="closeButton" onClick={() => toggleModal()}>
@@ -71,11 +68,19 @@ const BreweriesForm = () => {
         <div className="overflow">
           {/* <img className="exitButton card-img-top" alt="Pin img" onClick={() => toggleModal()} src={imageurl} /> */}
           <div className="exitButton card-top" onClick={() => toggleModal()}>
-            <h1>Brewery</h1>
-            <li value={el.url} key={el.name}>
-              {el.name} {el.city} {el.postal_code} {el.state}
+            <h3>{el.name} </h3>
+            <li  value={el.url} key={el.name}>
+              <br></br>
+              <h6>
+              Brewery Type: {el.brewery_type}
+                  </h6>
+              <br></br>
+              {el.city},
+              {el.state}
+              <br></br>
+              {el.postal_code} 
+              <br></br>
               <a href={el.website_url}> {el.website_url}</a>
-              {el.brewery_type}
             </li>
           </div>
         </div>

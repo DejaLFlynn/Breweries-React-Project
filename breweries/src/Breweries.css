@@ -65,7 +65,7 @@
       text-align: center;
       background-color: #ffffff;
       width: 100%;
-      border-top-right-radius: 2rem;
+      /* border-top-right-radius: 2rem; */
       border-bottom-right-radius: 2rem;
     }
   
@@ -80,7 +80,8 @@
         border: none;
         margin-right: 0.5rem;
         margin-top: 0.5rem;
-        background-color: blue;
+        background-color: rgb(245, 245, 250);
+        border-style: solid;
     }
   
 
@@ -102,12 +103,19 @@
 
 .card-top {
     background-color:lavender;
+    background-image: url('https://media.istockphoto.com/photos/draught-beer-in-glasses-picture-id1040303026?k=6&m=1040303026&s=612x612&w=0&h=ZlIJgK1QAz9KvSo-0i43yDkbgUv-gRRKZQHErr7ZmOc=');
+    background-position: center;
+    border-style: solid;
+    border: rgb(7, 120, 158);
     width: 25rem;
     height: 20rem;
     transition:transform 0.5s ease;
-    color: rgb(3, 3, 3);
+    color: rgb(250, 248, 248);
     flex-grow: 1;
     margin-bottom: 5px;
+    margin-right: 2px;
+    margin-left: 2px;
+    list-style-type: none;
 }
 
 .card-top:hover {
@@ -118,11 +126,8 @@
 
 .overflow {
     overflow: hidden;
-    border-radius: 2rem;
+    border-radius: 1rem;
 }
 
-/* .card-title {
-    height: 10px!important;
-} */
 
 
