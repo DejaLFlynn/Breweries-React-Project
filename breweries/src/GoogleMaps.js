@@ -1,51 +1,86 @@
-import React from 'react'
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-const {googleMapsApiKey} = process.env;
 
-const containerStyle = {
-  width: '400px',
-  height: '400px'
-};
+import React, { useState, useEffect } from "react";
+import {
+  GoogleMap,
+  Marker,
+  InfoWindow
+} from "react-google-maps";
+// import * as parkData from "./data/skateboard-parks.json";
+ import mapStyles from "./mapStyles";
 
-const center = {
-  lat: -3.745,
-  lng: -38.523
-};
+function GoogleMaps({listBrew}) {
+  const [selectedBrewery, setSelectedBrewery] = useState(null);
 
-function GoogleMaps() {
+  useEffect(() => {
+    const listener = e => {
+      if (e.key === "Escape") {
+        setSelectedBrewery(null);
+      }
+    };
+    window.addEventListener("keydown", listener);
 
-   const secret = googleMapsApiKey
-  const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
-    googleMapsApiKey: secret
-  })
+    return () => {
+      window.removeEventListener("keydown", listener);
+    };
+  }, []);
 
-  const [map, setMap] = React.useState(null)
-
-  const onLoad = React.useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds();
-    map.fitBounds(bounds);
-    setMap(map)
-  }, [])
-
-  const onUnmount = React.useCallback(function callback(map) {
-    setMap(null)
-  }, [])
-
-  
-
-  return isLoaded ? (
+  return (
     <GoogleMap
-    onLoad={map => {
-      const bounds = new window.google.maps.LatLngBounds();
-      map.fitBounds(bounds);
-    }}
-    onUnmount={map => {
-      // do your stuff before map is unmounted
-    }}
-  />
-  
-  ) : <></>
-}
+      defaultZoom={10}
+      defaultCenter={{ lat: 45.4211, lng: -75.6903 }}
+      defaultOptions={{ styles: mapStyles }}
+    >
+      {listBrew.map(park => (
+        <Marker
+          key={park.properties.PARK_ID}
+          position={{
+            lat: park.geometry.coordinates[1],
+            lng: park.geometry.coordinates[0]
+          }}
+          onClick={() => {
+            setSelectedBrewery(park);
+          }}
+          icon={{
+            url: ``,
+            scaledSize: new window.google.maps.Size(25, 25)
+          }}
+        />
+      ))}
 
-export default React.memo(GoogleMaps)
+      {selectedBrewery && (
+        <InfoWindow
+          onCloseClick={() => {
+            setSelectedBrewery(null);
+          }}
+          position={{
+            lat: selectedBrewery.geometry.coordinates[1],
+            lng: selectedBrewery.geometry.coordinates[0]
+          }}
+        >
+          <div>
+            <h2>{selectedBrewery.properties.NAME}</h2>
+            <p>{selectedBrewery.properties.DESCRIPTIO}</p>
+          </div>
+        </InfoWindow>
+      )}
+    </GoogleMap>
+  );
+}
+export default GoogleMaps;
+
+// const MapWrapped = withScriptjs(withGoogleMap(Map));
+
+// export default function App() {
+//   return (
+//     <div style={{ width: "100vw", height: "100vh" }}>
+//       <MapWrapped
+//         googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${
+//           process.env.REACT_APP_GOOGLE_KEY
+//         }`}
+//         loadingElement={<div style={{ height: `100%` }} />}
+//         containerElement={<div style={{ height: `100%` }} />}
+//         mapElement={<div style={{ height: `100%` }} />}
+//       />
+//     </div>
+//   );
+// }

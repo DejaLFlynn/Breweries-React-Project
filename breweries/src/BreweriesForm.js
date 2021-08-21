@@ -29,37 +29,33 @@ const BreweriesForm = () => {
       <option value={el.url} key={el.name}>
         {el.name}
       </option>
+      
     );
   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const submitBrewery = async () => {
+    
       try {
-        let response = await axios.get(
-          "https://api.openbrewerydb.org/breweries?by_city=philadelphia"
-        );
+        let response = await axios.get(value);
         let brewValue = response.data;
 
         setListBrew(brewValue);
       } catch (error) {
         setListBrew([]);
       }
-    };
-    submitBrewery();
+    
+  
   };
   const brewerySelected = (event) => {
-    setValue(event.target.value);
+      setValue(event.target.value);
+      debugger
     return { value, onChange: brewerySelected };
   };
 
-  const handleClick = (event) => {
-    event.preventDefault();
-    history.push({
-      pathname: `/https://api.openbrewerydb.org/breweries/${event.target.value}`,
-      state: { url: event.target.name },
-    });
-  };
+
+
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -68,7 +64,8 @@ const BreweriesForm = () => {
           {listOfBreweries}
         </select>
       </form>
-      <p>{handleClick}</p>
+      {value}
+      {/* <p>{handleBreweryInfo}</p> */}
     </div>
   );
 };
