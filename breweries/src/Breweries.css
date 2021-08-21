@@ -1,0 +1,128 @@
+
+* {
+    padding: 0;
+    margin: 0;
+  }
+  
+  
+  .mainDivModal {
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+    height: 25rem;
+    text-align: center;
+    align-items: center;
+    width: 23.5vw;
+    border-radius: 2rem;
+    transition: opacity 0.8s ease-in-out;
+  }
+
+  
+  
+  /* The Modal (background) */
+  .mainDivModalBackground {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease-in-out;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      z-index: 5;
+    }
+  
+    .showModal-true {
+        opacity: 70;
+        pointer-events: none;
+    }
+  
+    .showModal-false {
+      visibility: hidden;
+    }
+    
+    .innerModal {
+        width: 50%;
+        height: 35rem;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        /* z-index: 2000; */
+        border-radius: 2rem!important;
+        background: #ffffff;
+        border: none;
+  
+    }
+  
+
+  
+    .cardContent {
+      justify-content: center;
+      text-align: center;
+      background-color: #ffffff;
+      width: 100%;
+      border-top-right-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+    }
+  
+    .closeButton {
+        display: flex;
+        float: right;
+        padding: 5px;
+        background-color: transparent;
+        width: 3rem!important;
+        justify-content: center;
+        text-align: center;
+        border: none;
+        margin-right: 0.5rem;
+        margin-top: 0.5rem;
+        background-color: blue;
+    }
+  
+
+  
+  .mapDiv {
+    display: inline;
+    padding: 5%;
+    overflow-y: scroll;
+  }
+  
+  .styleMap {
+    color: #000000;
+    margin-top: 4%;
+    font-variant: small-caps;
+    padding: 5%;
+  }
+  
+
+
+.card-top {
+    background-color:lavender;
+    width: 25rem;
+    height: 20rem;
+    transition:transform 0.5s ease;
+    color: rgb(3, 3, 3);
+    flex-grow: 1;
+    margin-bottom: 5px;
+}
+
+.card-top:hover {
+    transform: scale(1.1);
+}
+
+
+
+.overflow {
+    overflow: hidden;
+    border-radius: 2rem;
+}
+
+/* .card-title {
+    height: 10px!important;
+} */
+
+

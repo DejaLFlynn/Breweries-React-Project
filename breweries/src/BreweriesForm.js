@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import "./Breweries.css";
 
 const BreweriesForm = () => {
   const [listBrew, setListBrew] = useState([]);
@@ -11,6 +12,10 @@ const BreweriesForm = () => {
   const [postal, setPostal] = useState("");
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
+  const [modal, setModal] = useState(false);
+  const toggleModal = () => {
+    setModal(!modal);
+  };
 
   useEffect(() => {
     const fetchBreweries = async () => {
@@ -31,24 +36,47 @@ const BreweriesForm = () => {
 
   const listOfBreweries = listBrew.map((el) => {
     return (
-      <div>
-        <h1>Brewery</h1>
-        <li value={el.url} key={el.name}>
-          {el.name} {el.city} {el.postal_code} {el.state}
-          <a href={el.website_url}> {el.website_url}</a>
-          {el.brewery_type}
-        </li>
-        <div>
-          <h2>Additional info</h2>
-          {el.name}
-          <div>
-            <h4>
-              {el.city} {el.postal_code} {el.state}
-            </h4>
+      <div className="mainDivModal">
+        <div
+          title={el.name}
+          className={`mainDivModalBackground showModal-${modal}`}
+        >
+          <div className="innerModal">
+            <h2>Additional info</h2>
+            <div className="cardContent">
+              {el.name}
+
+              <div>
+                <h4>
+                  {el.city} {el.postal_code} {el.state}
+                </h4>
+              </div>
+              <div className="mapDiv">
+                <div className="styleMap">
+
+                    {el.latitude}
+                    {el.longitude}
+                </div>
+
+                <div>
+                  <button className="closeButton" onClick={() => toggleModal()}>
+                    {" "}
+                    X{" "}
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            {el.latitude}
-            {el.longitude}
+        </div>
+        <div className="overflow">
+          {/* <img className="exitButton card-img-top" alt="Pin img" onClick={() => toggleModal()} src={imageurl} /> */}
+          <div className="exitButton card-top" onClick={() => toggleModal()}>
+            <h1>Brewery</h1>
+            <li value={el.url} key={el.name}>
+              {el.name} {el.city} {el.postal_code} {el.state}
+              <a href={el.website_url}> {el.website_url}</a>
+              {el.brewery_type}
+            </li>
           </div>
         </div>
       </div>
@@ -58,4 +86,3 @@ const BreweriesForm = () => {
 };
 
 export default BreweriesForm;
-
