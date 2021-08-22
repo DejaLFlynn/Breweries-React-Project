@@ -13,12 +13,13 @@ class GoogleMaps extends Component {
     zoom: 11,
     
   };
+  
 
   render() {
 
    
     return (
-      <div style={{ height: "50vh", width: "50%" }} >
+      <div style={{ height: "45vh", width: "55%" }} >
         <GoogleMapReact 
           bootstrapURLKeys={{
             key: "AIzaSyByST46Pv18sO3NNIXStk7acWK2l75nTPQ",

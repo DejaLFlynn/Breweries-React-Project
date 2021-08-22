@@ -38,9 +38,13 @@ const BreweriesForm = () => {
           className={`mainDivModalBackground showModal-${modal}`}
         >
           <div className="innerModal">
-            <h2>Additional info</h2>
+            <h3>Additional info</h3>
+          
             <div className="cardContent">
+              <h2>
+
               {el.name}
+              </h2>
 
               <div>
                 <h4>
@@ -50,12 +54,12 @@ const BreweriesForm = () => {
                 {el.postal_code}
                 </h4>
               </div>
-
-              <div>
                 <button className="closeButton" onClick={() => toggleModal()}>
                   {" "}
                   Back to list{" "}
                 </button>
+
+              <div>
               </div>
               <div className="mapDiv">
                 <div className="styleMap" key={latitude}>
@@ -70,7 +74,7 @@ const BreweriesForm = () => {
         <div className="overflow">
           {/* <img className="exitButton card-img-top" alt="Pin img" onClick={() => toggleModal()} src={imageurl} /> */}
           <div className="exitButton card-top" onClick={() => toggleModal()}>
-            <h4>{el.name} </h4>
+            <h3>{el.name} </h3>
             <li value={el.url} key={el.name}>
               <br></br>
               <h6>Brewery Type: {el.brewery_type}</h6>
