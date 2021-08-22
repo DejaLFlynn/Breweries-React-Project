@@ -10,7 +10,6 @@
     text-align: center;
     align-items: center;
     height: 25rem;
-    text-align: center;
     align-items: center;
     width: 23.5vw;
     border-radius: 2rem;
@@ -103,10 +102,11 @@
 
 .card-top {
     background-color:rgb(107, 107, 109);
-    background-image: url('https://media.istockphoto.com/photos/draught-beer-in-glasses-picture-id1040303026?k=6&m=1040303026&s=612x612&w=0&h=ZlIJgK1QAz9KvSo-0i43yDkbgUv-gRRKZQHErr7ZmOc=');
+    background-image: url('./assets/beerimg.png');
     background-position: center;
     border-style: solid;
     border: rgb(7, 120, 158);
+    text-align: center;
     width: 25rem;
     height: 20rem;
     padding: 20px;

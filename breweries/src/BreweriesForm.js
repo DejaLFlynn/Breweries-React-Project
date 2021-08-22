@@ -67,8 +67,9 @@ const BreweriesForm = () => {
         </div>
         <div className="overflow">
           {/* <img className="exitButton card-img-top" alt="Pin img" onClick={() => toggleModal()} src={imageurl} /> */}
-          <div className="exitButton card-top" onClick={() => toggleModal()}>
-            <h3>{el.name} </h3>
+          <div className="exitButton card-top"  onClick={() => toggleModal()}>
+            
+            <h4>{el.name} </h4>
             <li  value={el.url} key={el.name}>
               <br></br>
               <h6>
