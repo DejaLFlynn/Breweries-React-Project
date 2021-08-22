@@ -58,7 +58,7 @@ const BreweriesForm = () => {
                 </button>
               </div>
               <div className="mapDiv">
-                <div className="styleMap">
+                <div className="styleMap" key={latitude}>
                   {el.latitude}
                   {el.longitude}
                 </div>
