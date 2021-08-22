@@ -44,7 +44,10 @@ const BreweriesForm = () => {
 
               <div>
                 <h4>
-                  {el.city} {el.postal_code} {el.state}
+                {el.street}
+                {el.city},{el.state}
+                <br></br>
+                {el.postal_code}
                 </h4>
               </div>
 
@@ -72,6 +75,7 @@ const BreweriesForm = () => {
               <br></br>
               <h6>Brewery Type: {el.brewery_type}</h6>
               <div className="brewAddress">
+                {el.street}
                 <br></br>
                 {el.city},{el.state}
                 <br></br>
