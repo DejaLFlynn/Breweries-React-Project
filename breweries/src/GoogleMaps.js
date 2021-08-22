@@ -8,8 +8,8 @@ const AnyReactComponent = ({ text, listBrew }) => <div>{text}</div>;
 class GoogleMaps extends Component {
   static defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: 39.9648491,
+      lng: -75.13506341
     },
     zoom: 11
   };
@@ -17,7 +17,7 @@ class GoogleMaps extends Component {
   render() {
     return (
   
-      <div style={{ height: '25vh', width: '25%' }}>
+      <div style={{ height: '50vh', width: '50%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{
              key: "AIzaSyByST46Pv18sO3NNIXStk7acWK2l75nTPQ" 
@@ -27,8 +27,8 @@ class GoogleMaps extends Component {
           defaultZoom={this.props.zoom}
         >
           <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
+            lat={39.9648491}
+            lng={-75.13506341}
             text="My Marker"
           />
         </GoogleMapReact>
