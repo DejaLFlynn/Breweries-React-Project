@@ -107,7 +107,7 @@
     border-style: solid;
     border: rgb(7, 120, 158);
     text-align: center;
-    width: 25rem;
+   
     height: 20rem;
     padding: 20px;
     transition:transform 0.5s ease;
@@ -131,4 +131,10 @@
 }
 
 
-
+.brewAddress{
+  background-color:rgba(252, 250, 250, 0.5); 
+  color: #000000;
+  border-radius: 1rem;
+  /* background-color: white; */
+  
+}

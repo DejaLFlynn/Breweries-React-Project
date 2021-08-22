@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import "./Breweries.css";
-import GoogleMaps from './GoogleMaps'
+import GoogleMaps from "./GoogleMaps";
 
 const BreweriesForm = () => {
   const [listBrew, setListBrew] = useState([]);
@@ -19,7 +19,7 @@ const BreweriesForm = () => {
         let res = await axios.get(
           "https://api.openbrewerydb.org/breweries?by_city=philadelphia"
         );
-          //  debugger
+        //  debugger
 
         let data = res.data;
         setListBrew(data);
@@ -47,41 +47,38 @@ const BreweriesForm = () => {
                   {el.city} {el.postal_code} {el.state}
                 </h4>
               </div>
+
+              <div>
+                <button className="closeButton" onClick={() => toggleModal()}>
+                  {" "}
+                  Back to list{" "}
+                </button>
+              </div>
               <div className="mapDiv">
                 <div className="styleMap">
-
-                    {el.latitude}
-                    {el.longitude}
+                  {el.latitude}
+                  {el.longitude}
                 </div>
-                <GoogleMaps/>
-
-                <div>
-                  <button className="closeButton" onClick={() => toggleModal()}>
-                    {" "}
-                    X{" "}
-                  </button>
-                </div>
+                <GoogleMaps />
               </div>
             </div>
           </div>
         </div>
         <div className="overflow">
           {/* <img className="exitButton card-img-top" alt="Pin img" onClick={() => toggleModal()} src={imageurl} /> */}
-          <div className="exitButton card-top"  onClick={() => toggleModal()}>
-            
+          <div className="exitButton card-top" onClick={() => toggleModal()}>
             <h4>{el.name} </h4>
-            <li  value={el.url} key={el.name}>
+            <li value={el.url} key={el.name}>
               <br></br>
-              <h6>
-              Brewery Type: {el.brewery_type}
-                  </h6>
-              <br></br>
-              {el.city},
-              {el.state}
-              <br></br>
-              {el.postal_code} 
-              <br></br>
-              <a href={el.website_url}> {el.website_url}</a>
+              <h6>Brewery Type: {el.brewery_type}</h6>
+              <div className="brewAddress">
+                <br></br>
+                {el.city},{el.state}
+                <br></br>
+                {el.postal_code}
+                <br></br>
+                <a href={el.website_url}> {el.website_url}</a>
+              </div>
             </li>
           </div>
         </div>
