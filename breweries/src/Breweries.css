@@ -138,3 +138,55 @@
   /* background-color: white; */
   
 }
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+ .card-top{
+  background-image: url('./assets/beerimg.png');
+  background-position: center;
+  border-style: solid;
+  border: rgb(7, 120, 158);
+  text-align: center;
+ 
+  height: 20rem;
+  padding: 20px;
+  transition:transform 0.5s ease;
+  color: rgb(250, 248, 248);
+  flex-grow: 1;
+  margin-bottom: 5px;
+  margin-right: 2px;
+  margin-left: 2px;
+  list-style-type: none;
+ }
+ .innerModal{
+  width: 50%;
+  height: 35rem;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  /* z-index: 2000; */
+  border-radius: 2rem!important;
+  background: #ffffff;
+  border: none;
+ }
+ .mapDiv {
+  display: inline;
+  padding: 5%;
+  overflow-y: scroll;
+  height: 20px;
+}
+.closeButton {
+  display: inline;
+  /* float: left; */
+  /* padding: 5px; */
+  background-color: transparent;
+  height: 3rem;
+  width: 3rem!important;
+  justify-content: center;
+  text-align: center;
+  border: none;
+  /* margin-right: 0.5rem;
+  margin-top: 0.5rem; */
+  background-color: rgb(245, 245, 250);
+  border-style: solid;
+}
+  }

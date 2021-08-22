@@ -1,7 +1,7 @@
 import react from "react";
 import BreweriesForm from "./BreweriesForm";
-import GoogleMaps from "./GoogleMaps";
-import { withGoogleMap, withScriptjs } from "react-google-maps";
+
+
 import "./App.css";
 function App() {
   return (
