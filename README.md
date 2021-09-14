@@ -1,4 +1,4 @@
-# Breweries-React-Project
+# Breweries
 Displays Philadelphia Breweries
 
 A component that displays a list of breweries in Philly.
