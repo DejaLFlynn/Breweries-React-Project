@@ -26,7 +26,7 @@ For fun I created a web platform where individuals could have a list that should
 - Google Maps API
 
 # Getting Started:
-Hosted website
+# Hosted website
 https://blissful-northcutt-21a14c.netlify.app
 
 1. Install the dependencies needed to run breweries by running in terminal:
