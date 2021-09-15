@@ -28,7 +28,6 @@ const BreweriesForm = () => {
     };
     fetchBreweries();
   }, []);
-
   const listOfBreweries = listBrew.map((el) => {
     return (
       <div className="mainDivModal">
@@ -38,7 +37,6 @@ const BreweriesForm = () => {
         >
           <div className="innerModal">
             <h3>Additional info</h3>
-          
             <div className="cardContent">
               <h2>
 
