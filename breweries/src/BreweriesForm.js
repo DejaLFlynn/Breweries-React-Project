@@ -6,20 +6,19 @@ import GoogleMaps from "./GoogleMaps";
 
 const BreweriesForm = () => {
   const [listBrew, setListBrew] = useState([]);
-  const [latitude, setLatitude] = useState("");
-  const [longitude, setLongitude] = useState("");
   const [modal, setModal] = useState(false);
   const toggleModal = () => {
     setModal(!modal);
   };
-
+//use context api for providers and subscribers
+//delete unused variables
+   //add margin in separate div 
   useEffect(() => {
     const fetchBreweries = async () => {
       try {
         let res = await axios.get(
           "https://api.openbrewerydb.org/breweries?by_city=philadelphia"
         );
-        //  debugger
 
         let data = res.data;
         setListBrew(data);
@@ -62,7 +61,7 @@ const BreweriesForm = () => {
               <div>
               </div>
               <div className="mapDiv">
-                <div className="styleMap" key={latitude}>
+                <div className="styleMap" >
                   {el.latitude}
                   {el.longitude}
                 </div>
@@ -72,15 +71,17 @@ const BreweriesForm = () => {
           </div>
         </div>
         <div className="overflow">
-          {/* <img className="exitButton card-img-top" alt="Pin img" onClick={() => toggleModal()} src={imageurl} /> */}
           <div className="exitButton card-top" onClick={() => toggleModal()}>
             <h3>{el.name} </h3>
             <li value={el.url} key={el.name}>
               <br></br>
               <h6>Brewery Type: {el.brewery_type}</h6>
+            
               <div className="brewAddress">
+                
                 {el.street}
                 <br></br>
+             
                 {el.city},{el.state}
                 <br></br>
                 {el.postal_code}
