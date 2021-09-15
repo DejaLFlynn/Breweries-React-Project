@@ -13,8 +13,6 @@ For fun I created a web platform where individuals could have a list that should
 
 
 
-
-
 ![](https://media.giphy.com/media/2C05Ldv9CgcSWJkT5H/giphy.gif?cid=790b7611ed3a3e109c22089c931f85f4eb47dba3291ae444&rid=giphy.gif&ct=g)
 
 
