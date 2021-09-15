@@ -3,8 +3,6 @@
 ![Breweries](https://github.com/DejaLFlynn/breweries/blob/main/breweries/src/assets/breweries.png)
 
 
-
-
 # Motivation:
 Years ago I declared that Philadelphia was one of my favorite cities and one of my list of to do's in life are to visit more breweries.  Using the Open Breweries API I wanted to create a map of my next adventures. 
 

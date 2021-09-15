@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
 import { CoordContext } from "./CoordContext";
-// import BreweriesForm from "./BreweriesForm";
-//or local storage 
+
 const BreweriesForm = ({ text, listBrew }) => <div>{text}</div>;
 
 class GoogleMaps extends Component {
